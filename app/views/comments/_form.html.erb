@@ -1,0 +1,34 @@
+<%= form_with(model: [ @post, Comment.new ]) do |form| %>
+  <%# <% if comment.errors.any? %1> %>
+  <%#   <div id="error_explanation"> %>
+  <%#     <h2><%= pluralize(comment.errors.count, "error") %1> prohibited this comment from being saved:</h2> %>
+
+  <%#     <ul> %>
+  <%#       <% comment.errors.each do |error| %1> %>
+  <%#         <li><%= error.full_message %1></li> %>
+  <%#       <% end %1> %>
+  <%#     </ul> %>
+  <%#   </div> %>
+  <%# <% end %1> %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <%= form.hidden_field :post_id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
